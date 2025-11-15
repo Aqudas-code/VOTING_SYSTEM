@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #f2f4f7;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        table {
+            background: white;
+        }
+        th {
+            background-color: #4cc2ff;
+            text-align: center;
+            font-size: 18px;
+        }
+        td {
+            text-align: center;
+            font-size: 17px;
+        }
+        .btn-custom {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🗳 Voting Results</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Candidate Name</th>
+                <th>Party Name</th>
+                <th>Votes Received</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in results %}
+            <tr>
+                <td>{{ row.candidate_name }}</td>
+                <td>{{ row.party_name }}</td>
+                <td>{{ row.total_votes }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-center">
+        <a href="/vote" class="btn btn-success btn-custom">⬅ Back to Voting</a>
+    </div>
+</div>
+
+</body>
+</html>
